@@ -36,11 +36,19 @@ const banana = new Fruit({
     review: "Weird texture"
 });
 
-Fruit.insertMany([kiwi, orange, banana], function(err){
+// Fruit.insertMany([kiwi, orange, banana], function(err){
+//     if(err){
+//         console.log(err);
+//     }else {
+//         console.log("Succesfully saved all the fruits to fruitsDB")
+//     }
+// });
+
+Fruit.find(function(err, fruits){
     if(err){
         console.log(err);
-    }else {
-        console.log("Succesfully saved all the fruits to fruitsDB")
+    } else {
+        console.log(fruits);
     }
 });
 
@@ -56,4 +64,4 @@ const person = new Person({
     age: 37
 });
 
-person.save();
+//person.save();

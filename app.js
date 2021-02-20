@@ -18,6 +18,32 @@ const fruit = new Fruit({
 
 //fruit.save();
 
+const kiwi = new Fruit({
+    name: "Kiwi",
+    score: 10,
+    review: "The best fruit!"
+});
+
+const orange = new Fruit({
+    name: "Orange",
+    score: 4,
+    review: "Too sour for me"
+});
+
+const banana = new Fruit({
+    name: "Banana",
+    score: 3,
+    review: "Weird texture"
+});
+
+Fruit.insertMany([kiwi, orange, banana], function(err){
+    if(err){
+        console.log(err);
+    }else {
+        console.log("Succesfully saved all the fruits to fruitsDB")
+    }
+});
+
 const personSchema = new mongoose.Schema({
     name: String,
     age: Number

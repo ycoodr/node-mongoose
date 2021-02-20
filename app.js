@@ -77,13 +77,15 @@ Fruit.find(function(err, fruits){
 // }
 // );
 
-Fruit.deleteOne({ name: "Peach"}, function(err){
-    if(err){
-        console.log(err);
-    } else {
-        console.log("Succesfully deleted the document.")
-    }
-});
+// Fruit.deleteOne({ name: "Peach"}, function(err){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         console.log("Succesfully deleted the document.")
+//     }
+// });
+
+
 
 const personSchema = new mongoose.Schema({
     name: String,
@@ -98,3 +100,10 @@ const person = new Person({
 });
 
 //person.save();
+Person.deleteMany({ name: "John"}, function(err){
+    if(err){
+        console.log(err);
+    } else {
+        console.log("Succesfully deleted all the documents.");
+    }
+});

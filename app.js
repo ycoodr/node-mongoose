@@ -23,7 +23,7 @@ const fruit = new Fruit({
     review: "Pretty solid as a fruit."
 });
 
-fruit.save();
+//fruit.save();
 
 // const kiwi = new Fruit({
 //     name: "Kiwi",
@@ -63,6 +63,19 @@ Fruit.find(function(err, fruits){
         });
     }
 });
+
+Fruit.updateOne({
+    _id: "6030d6bceebdde61a4790a11"
+},
+{ name: "Peach"},
+function(err){
+    if(err){
+        console.log(err);
+    } else{
+        console.log("Succesfully updated the document.")
+    }
+}
+);
 
 const personSchema = new mongoose.Schema({
     name: String,

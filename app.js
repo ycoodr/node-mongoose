@@ -64,18 +64,26 @@ Fruit.find(function(err, fruits){
     }
 });
 
-Fruit.updateOne({
-    _id: "6030d6bceebdde61a4790a11"
-},
-{ name: "Peach"},
-function(err){
+// Fruit.updateOne({
+//     _id: "6030d6bceebdde61a4790a11"
+// },
+// { name: "Peach"},
+// function(err){
+//     if(err){
+//         console.log(err);
+//     } else{
+//         console.log("Succesfully updated the document.")
+//     }
+// }
+// );
+
+Fruit.deleteOne({ name: "Peach"}, function(err){
     if(err){
         console.log(err);
-    } else{
-        console.log("Succesfully updated the document.")
+    } else {
+        console.log("Succesfully deleted the document.")
     }
-}
-);
+});
 
 const personSchema = new mongoose.Schema({
     name: String,
